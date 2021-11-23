@@ -1,11 +1,14 @@
 from flask import Flask
 app = Flask(__name__)
 
+todos = [
+    { "label": "My first task", "done": False },
+    { "label": "My second task", "done": False }
+]
 
 @app.route('/todos', methods=['GET'])
 def hello_world():
-    return "<h1>Hello!</h1>"
-
+  return flask.jsonify(todos)
 
 # Estas dos líneas siempre seben estar al final de tu archivo app.py.
 
