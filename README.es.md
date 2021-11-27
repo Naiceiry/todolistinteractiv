@@ -59,3 +59,8 @@ Y devolverá la lista de taread o todos actualizada.
 ### DELETE /todos/<int:position>
 
 Eliminará una tarea pendiente en función de una posición determinada al final de la URL y devolverá la lista actualizada de tareas pendientes.
+
+pipenv --three
+pipenv install flask
+pipenv run python src/app.py
+learnpack start

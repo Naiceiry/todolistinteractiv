@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify 
+from flask import Flask, request, jsonify , json
 app = Flask(__name__)
 
 
@@ -16,8 +16,10 @@ def hello_world():
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
     request_body = request.data
-    print("Incoming request with the following body", request_body)
-    return 'Response for the POST todo'
+    decoded_object = json.loads(request_body)
+    todos.append(decoded_object)
+    json_text = jsonify(todos)
+    return json_text
 
 # Estas dos líneas siempre seben estar al final de tu archivo app.py.
 
